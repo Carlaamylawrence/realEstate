@@ -33,7 +33,36 @@
 }
 .property-info{
   display:flex;
-  
+  margin-top: -1rem;
+
+}
+
+.property-card {
+  position: relative;
+}
+
+.price-details {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+
+.property-card:hover .price-details {
+  opacity: 1;
 }
 
 
