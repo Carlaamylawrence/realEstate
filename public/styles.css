@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#landing {
+  background-image: url(./assets/pexels-the-lazy-artist-gallery-1642125.jpg);
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.card {
+  margin-top: -2rem;
+  width: 70%;
+}

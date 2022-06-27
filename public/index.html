@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomezConnect</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- LANDING PAGE -->
+    <section id="landing">
+      <div class="headerContainer">
+        <h1>Welcome to Homez Connect</h1>
+        <h3>
+          We are an innovative real estate service trying to bring home dwellers
+          to their home of their dreams
+        </h3>
+      </div>
+    </section>
+    <!-- SEARCH BAR -->
+    <div class="searchBar">
+      <div class="card">
+        <div class="card-body row">
+          <div class="col-md-2">
+            <p>LOOKING FOR</p>
+            <div class="form-floating mb-3">
+              <select class="form-select" id="Type">
+                <option selected>Select the type of property</option>
+                <option value="Apartment">Apartment</option>
+                <option value="Family Home">Family Home</option>
+                <option value="Studio">Studio</option>
+              </select>
+              <label for="ype">Type Of property</label>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <p>LOCATION</p>
+            <div class="form-floating mb-3">
+              <select class="form-select" id="Location">
+                <option selected>Select the location</option>
+                <option value="Cape Town">Cape Town</option>
+                <option value="Atlantic Seaboard">Atlantic Seaboard</option>
+                <option value="Northen Suburbs">Northen Suburbs</option>
+                <option value="Southern Suburbs">Southern Suburbs</option>
+              </select>
+              <label for="Location">Location</label>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <p>PROPERTY SIZE</p>
+            <div class="form-floating mb-3">
+              <select class="form-select" id="Bedrooms">
+                <option selected>Select the number of bedrooms</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+              <label for="Bedrooms">Number of Bedrooms</label>
+            </div>
+          </div>
+          <div class="col-md-2"></div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-outline-dark">SEARCH</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- PROPERTIES MUST SHOW HERE -->
+    <section id="listings">
+      <div id="displayListings"></div>
+    </section>
+
+    <!-- FOOTER -->
+    <section id="footer">
+      <div class="locations">
+        <ul>
+          <li>Cape Town</li>
+          <li>Northern Suburbs</li>
+          <li>Southern Suburbs</li>
+          <li>Atlantic Seaboard</li>
+        </ul>
+      </div>
+      <div class="contactUs">
+        <ul>
+          <li>76 Regent Rd, Sea Point, Cape Town, 8005</li>
+          <li>076 719 4703</li>
+          <li>021 439 9030</li>
+          <li>email@homezconnect.co</li>
+        </ul>
+      </div>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
