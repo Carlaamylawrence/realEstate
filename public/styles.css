@@ -31,7 +31,10 @@
 #listings{
   min-height: 90vh;
 }
-
+.property-info{
+  display:flex;
+  
+}
 
 
 

@@ -9,7 +9,7 @@ let properties = JSON.parse(localStorage.getItem("properties"))
         bedrooms: "5",
         baths: "5",
         garage: "3",
-        size: "476 m²",
+        size: "476",
         price: "23 950 000",
       },
     ];
@@ -18,8 +18,15 @@ function showListings(properties) {
   document.querySelector("#displayListings").innerHTML = "";
   properties.forEach((property, i) => {
     document.querySelector("#displayListings").innerHTML += `
+    <p>R ${property.price}</p>
     <img src=${properties[i].image} style="width: 300px; height 400px;" >
     <p> ${property.title} </p>
+    <div class="property-info">
+    <li><i class="fa-solid fa-bed"></i> ${property.bedrooms}</li>
+    <li><i class="fa-solid fa-shower"></i> ${property.baths}</li>
+    <li><i class="fa-solid fa-car"></i> ${property.garage}</li>
+    <li><i class="fa-solid fa-ruler"></i> ${property.size}m² </li>
+    </div>
     `;
   });
 }
