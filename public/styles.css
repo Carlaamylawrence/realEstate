@@ -11,7 +11,40 @@
   min-height: 100vh;
 }
 
+.headerContainer{
+  color: whitesmoke;
+  text-shadow: 2px 1px 1px black;
+}
+
 .card {
-  margin-top: -2rem;
+  margin-top: -3rem;
   width: 70%;
+
+}
+
+#footer-top{
+  background-color:#004274;
+  color:white;
+
+}
+
+#listings{
+  min-height: 90vh;
+}
+
+
+
+
+li{
+  list-style-type:none;
+  padding:1rem;
+}
+
+.email-input{
+  width:80%;
+}
+#footer-bottom{
+  background-color:  #00335A;
+  color:white;
+  margin-bottom: 0;
 }

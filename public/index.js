@@ -1,5 +1,5 @@
-let properties = JSON.parse(localStorage.getproperty("properties"))
-  ? JSON.parse(localStorage.getproperty("properties"))
+let properties = JSON.parse(localStorage.getItem("properties"))
+  ? JSON.parse(localStorage.getItem("properties"))
   : [
       {
         title: "Revamped Family Home",
