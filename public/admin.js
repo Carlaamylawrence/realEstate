@@ -2,6 +2,7 @@ let properties = JSON.parse(localStorage.getItem("properties"))
   ? JSON.parse(localStorage.getItem("properties"))
   : [
       {
+        id: 1,
         title: "Revamped Family Home",
         area: "Atlantic Seaboard",
         image: "https://i.postimg.cc/hGYJBkr2/pexels-mark-mccammon-2724749.jpg",
@@ -9,22 +10,34 @@ let properties = JSON.parse(localStorage.getItem("properties"))
         bedrooms: "5",
         baths: "5",
         garage: "3",
-        size: "476 m²",
+        size: "476",
         price: "23 950 000",
       },
     ];
 
-// READ
-function showListings(properties) {
-  document.querySelector("#displayListings").innerHTML = "";
+function displayListing(properties) {
+  document.querySelector("#listingContent").innerHTML = "";
+
   properties.forEach((property, i) => {
-    document.querySelector("#displayListings").innerHTML += `
-    <img src=${properties[i].image} style="width: 300px; height 400px;" >
-    <p> ${property.title} </p>
+    document.querySelector("#listingContent").innerHTML += `
+      <tr>
+        <td>${property.id}</td>
+        <td>${property.title}</td>
+        <td>${property.area}</td>
+        <td><img src=${properties[i].image} style="width: 100px;"></td>
+        <td>${property.type}</td>
+        <td>${property.bedrooms}</td>
+        <td>${property.baths}</td>
+        <td>${property.garage}</td>
+        <td>${property.size}</td>
+        <td>${property.price}</td>
+        <td><i class="fa-solid fa-trash-can"><i class="fa-solid fa-pencil"></i></i></td>
+      <tr>
     `;
   });
 }
-showListings(properties);
+
+displayListing(properties);
 
 // CREATE
 function addListing() {
@@ -41,10 +54,32 @@ function addListing() {
     price: document.querySelector("#Price").value,
   };
   properties.push(property);
-  localStorage.setItem("properties", JSON.stringify("properties"));
-  showListings(properties);
+  localStorage.setItem("properties", JSON.stringify(properties));
+  displayListing(properties);
   console.log(properties);
 }
+// UPDATE
+// function editContent(event) {
+//   let properties = Array.from(JSON.parse(localStorage.getItem("properties")));
+//   if (event.value === "") {
+//     alert("Content is empty!");
+//     event.value = currentContent;
+//     return;
+//   }
+//   properties.forEach((property) => {
+//     if (property.property === event.value) {
+//       alert("Content already exist!");
+//       event.value = currentContent;
+//       return;
+//     }
+//   });
+//   properties.forEach((property) => {
+//     if (property.property === currentContent) {
+//       property.property = event.value;
+//     }
+//   });
+//   localStorage.setItem("properties", JSON.stringify(property));
+// }
 
 //DELETE
 function deleteTask() {

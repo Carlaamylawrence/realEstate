@@ -17,8 +17,8 @@
   <body>
     <!-- LANDING PAGE -->
     <section id="landing">
-      <div class="headerContainer d-flex flex-column  align-items-center py-5">
-        <h1>Welcome to Homez Connect</h1>
+      <div class="header-container ">
+        <h1 class="text-center">Welcome to Homez Connect</h1>
         <h3>
           We are an innovative real estate service trying to bring home dwellers
           to their home of their dreams
@@ -31,9 +31,9 @@
         <div class="card-body row d-flex justify-content-center align-items-center g-3">
           <div class="col-md-2">
             <p>LOOKING FOR</p>
-            <div class="form mb-3">
-              <select class="form-select" id="Type">
-                <option selected>All</option>
+            <div class="form mb-3" onsubmit="event.preventDefault()">
+              <select class="form-select" id="Type" onchange="filteredType(event);">
+                <option selected value="all">All</option>
                 <option value="Apartment">Apartment</option>
                 <option value="Family Home">Family Home</option>
                 <option value="Studio">Studio</option>
@@ -44,8 +44,8 @@
           <div class="col-md-2">
             <p>LOCATION</p>
             <div class="form mb-3">
-              <select class="form-select" id="Location">
-                <option selected>All locations</option>
+              <select class="form-select" id="Location"  onchange="filteredLocation(event);">
+                <option selected value="all">All locations</option>
                 <option value="Cape Town">Cape Town</option>
                 <option value="Atlantic Seaboard">Atlantic Seaboard</option>
                 <option value="Northen Suburbs">Northen Suburbs</option>
@@ -56,8 +56,8 @@
           <div class="col-md-2">
             <p>PROPERTY SIZE</p>
             <div class="form mb-3">
-              <select class="form-select" id="Bedrooms">
-                <option selected>Bedrooms</option>
+              <select class="form-select" id="Bedrooms" onchange="filteredBedrooms(event);">
+                <option selected value="all">Bedrooms</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -70,7 +70,7 @@
             <p>YOUR BUDGET</p>
             <div class="form mb-3">
               <select class="form-select" id="Bedrooms">
-                <option selected>Max. price</option>
+                <option selected value="all">All</option>
                 <option value="ascending">Ascending</option>
                 <option value="descending">Descending</option>
                 <option value="0-1000000">0-1000000</option>
@@ -82,18 +82,18 @@
             </div>
           </div>
           <div class="col-md-2 d-flex justify-content-center">
-            <button type="button" class="btn btn-outline-dark ">SEARCH</button>
+            <button type="submit" class="btn btn-outline-dark ">SEARCH</button>
           </div>
         </div>
       </div>
     </div>
     <!-- PROPERTIES MUST SHOW HERE -->
     <section id="listings">
-      <div class="listiing-header text-align">
+      <div class="listiing-header text-align d-flex flex-column align-items-center justify-content-center mt-5 " >
         <h2>Discover Our Featured Listings</h2>
         <p>A wide variety of the perfect homes to suite your lifestyle, dreams and pocket</p>
       </div>
-      <div id="displayListings" class="p-5"></div>
+      <div id="displayListings" class=" d-flex p-5"></div>
     </section>
 
     <!-- FOOTER -->

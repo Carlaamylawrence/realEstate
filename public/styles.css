@@ -3,6 +3,10 @@
   margin: 0;
   padding: 0;
 }
+html,
+body {
+  overflow-x: hidden;
+}
 
 #landing {
   background-image: url(./assets/pexels-the-lazy-artist-gallery-1642125.jpg);
@@ -11,7 +15,7 @@
   min-height: 100vh;
 }
 
-.headerContainer{
+.header-container {
   color: whitesmoke;
   text-shadow: 2px 1px 1px black;
 }
@@ -19,22 +23,19 @@
 .card {
   margin-top: -3rem;
   width: 70%;
-
 }
 
-#footer-top{
-  background-color:#004274;
-  color:white;
-
+#footer-top {
+  background-color: #004274;
+  color: white;
 }
 
-#listings{
+#listings {
   min-height: 90vh;
 }
-.property-info{
-  display:flex;
+.property-info {
+  display: flex;
   margin-top: -1rem;
-
 }
 
 .property-card {
@@ -54,6 +55,8 @@
   right: 0;
   bottom: 0;
   padding: 30px;
+  width: 350px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -65,18 +68,16 @@
   opacity: 1;
 }
 
-
-
-li{
-  list-style-type:none;
-  padding:1rem;
+li {
+  list-style-type: none;
+  padding: 1rem;
 }
 
-.email-input{
-  width:80%;
+.email-input {
+  width: 80%;
 }
-#footer-bottom{
-  background-color:  #00335A;
-  color:white;
+#footer-bottom {
+  background-color: #00335a;
+  color: white;
   margin-bottom: 0;
 }
