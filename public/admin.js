@@ -24,19 +24,19 @@ function displayListing(properties) {
     document.querySelector("#listingContent").innerHTML += `
       <tr>
         <td>${property.id}</td>
-        <td><input id="title${property.id}" value=${property.title} disabled /></td>
-        <td><input id="area${property.id}" value=${property.area} disabled /></td>
-        <td><input id="image${property.id}" value=${property.image} disabled /></td>
-        <td><input id="type${property.id}" value= ${property.type} disabled /></td>
-        <td><input id="bedrooms${property.id}" value=${property.bedrooms} disabled /></td>
-        <td><input id="baths${property.id}" value=${property.baths} disabled /></td>
-        <td><input id="garage${property.id}" value=${property.garage} disabled /></td>
-        <td><input id="status${property.id}" value=${property.status} disabled /></td>
-        <td><input id="size${property.id}" value=${property.size}m² disabled /></td>
-        <td><input id="price${property.id}" value=${property.price} disabled /></td>
+        <td><input id="title${property.id}" value="${property.title}" disabled /></td>
+        <td><input id="area${property.id}" value="${property.area}" disabled /></td>
+        <td><input id="image${property.id}" value="${property.image}" disabled /><img src="${properties[i].image}" style= "width:100px;"></td>
+        <td><input id="type${property.id}" value= "${property.type}" disabled /></td>
+        <td><input id="bedrooms${property.id}" value="${property.bedrooms}" disabled /></td>
+        <td><input id="baths${property.id}" value="${property.baths}" disabled /></td>
+        <td><input id="garage${property.id}" value="${property.garage}" disabled /></td>
+        <td><input id="status${property.id}" value="${property.status}" disabled /></td>
+        <td><input id="size${property.id}" value="${property.size}"m² disabled /></td>
+        <td><input id="price${property.id}" value="${property.price}" disabled /></td>
         <td><button type='button' onclick='propertyDelete(${property.id});'><i class="fa-solid fa-trash-can"></i></button></td>
             <td><i class="fa-solid fa-pencil" id="edit${property.id}" onclick="propertyEdit(${property.id})"></i></td>
-            <button type='button' class="btn" id="save${property.id}" onclick="saveItem(${property.id})" style="display: none">Save</button>
+            <td><button type='button' class="btn" id="save${property.id}" onclick="propertySave(${property.id})" style="display: none">Save</button><td>
       <tr>
     `;
   });
@@ -89,8 +89,42 @@ function propertyEdit(id) {
   document.querySelector(`#edit${id}`).style.display = "none";
 }
 
-//  <button type='button' class="btn" id="edit${property.id}  onclick='propertyEdit(${property.id});' >
-//               </button>
+function propertySave(id) {
+  document.querySelector(`#title${id}`).disabled = true;
+  document.querySelector(`#area${id}`).disabled = true;
+  document.querySelector(`#image${id}`).disabled = true;
+  document.querySelector(`#type${id}`).disabled = true;
+  document.querySelector(`#bedrooms${id}`).disabled = true;
+  document.querySelector(`#baths${id}`).disabled = true;
+  document.querySelector(`#garage${id}`).disabled = true;
+  document.querySelector(`#status${id}`).disabled = true;
+  document.querySelector(`#size${id}`).disabled = true;
+  document.querySelector(`#price${id}`).disabled = true;
+
+  properties.forEach((property, i) => {
+    document.querySelector("#listingContent").innerHTML += `
+      <tr>
+        <td>${property.id}</td>
+        <td><input id="title${property.id}" value=${property.title} disabled /></td>
+        <td><input id="area${property.id}" value=${property.area} disabled /></td>
+        <td><input id="image${property.id}" value=${property.image} disabled /></td>
+        <td><input id="type${property.id}" value= ${property.type} disabled /></td>
+        <td><input id="bedrooms${property.id}" value=${property.bedrooms} disabled /></td>
+        <td><input id="baths${property.id}" value=${property.baths} disabled /></td>
+        <td><input id="garage${property.id}" value=${property.garage} disabled /></td>
+        <td><input id="status${property.id}" value=${property.status} disabled /></td>
+        <td><input id="size${property.id}" value=${property.size}m² disabled /></td>
+        <td><input id="price${property.id}" value=${property.price} disabled /></td>
+        <td><button type='button' onclick='propertyDelete(${property.id});'><i class="fa-solid fa-trash-can"></i></button></td>
+            <td><i class="fa-solid fa-pencil" id="edit${property.id}" onclick="propertyEdit(${property.id})"></i></td>
+            <td><button type='button' class="btn" id="save${property.id}" onclick="propertySave(${property.id})" style="display: none">Save</button><td>
+      <tr>
+    `;
+  });
+  properties.push(property);
+  localStorage.setItem("properties", JSON.stringify(properties));
+  displayListing(properties);
+}
 
 //DELETE's the last option
 // function propertyDelete(id) {
