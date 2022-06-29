@@ -15,7 +15,7 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./admin-styles.css" />
   </head>
   <body>
     <div class="admin-add-container m-2 d-flex justify-content-center">
@@ -141,6 +141,14 @@
                     />
                     <label for="Price">Price</label>
                   </div>
+                  <div class="form-floating mb-3">
+                    <select class="form-select" id="Status">
+                      <option selected>Select the listing</option>
+                      <option value="Rent">For Rent</option>
+                      <option value="Sale">For Sale</option>
+                    </select>
+                    <label for="Status">Listing Status</label>
+                  </div>
                   <button type="submit" class="submit btn btn-dark">ADD</button>
                 </form>
               </div>
@@ -170,8 +178,10 @@
             <th scope="col">Bedrooms</th>
             <th scope="col">Bathrooms</th>
             <th scope="col">Garage</th>
+            <th scope="col">Staus</th>
             <th scope="col">Size</th>
             <th scope="col">Price</th>
+            <th scope="col">Alter</th>
           </tr>
         </thead>
         <tbody id="listingContent"></tbody>

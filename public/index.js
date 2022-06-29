@@ -9,6 +9,7 @@ let properties = JSON.parse(localStorage.getItem("properties"))
         bedrooms: "5",
         baths: "5",
         garage: "3",
+        status: "Rent",
         size: "476",
         price: "23 950 000",
       },
@@ -22,6 +23,7 @@ function showListings(properties) {
       <img src=${properties[i].image} style="width: 350px; height:200px;" >
       <div class="price-details">
         <p>R ${property.price}</p>
+        <p> For ${property.status}
       </div>
       <h4> ${property.title} </h4>
       <div class="property-info">
