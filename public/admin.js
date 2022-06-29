@@ -30,8 +30,12 @@ function displayListing(properties) {
         <td>${property.baths}</td>
         <td>${property.garage}</td>
         <td>${property.size}</td>
-        <td>${property.price}</td>
-        <td><i class="fa-solid fa-trash-can"><i class="fa-solid fa-pencil"></i></i></td>
+        <td>${property.price}m²</td>
+        <td><button type='button' 
+                 onclick='propertyDelete(${property.id});'>
+                 <i class="fa-solid fa-trash-can"></i></button>
+            <button type='button' onclick='propertyEdit(${property.id});'>
+              <i class="fa-solid fa-pencil"></i></button></td>
       <tr>
     `;
   });
@@ -58,33 +62,28 @@ function addListing() {
   displayListing(properties);
   console.log(properties);
 }
-// UPDATE
-// function editContent(event) {
-//   let properties = Array.from(JSON.parse(localStorage.getItem("properties")));
-//   if (event.value === "") {
-//     alert("Content is empty!");
-//     event.value = currentContent;
-//     return;
-//   }
-//   properties.forEach((property) => {
-//     if (property.property === event.value) {
-//       alert("Content already exist!");
-//       event.value = currentContent;
-//       return;
-//     }
-//   });
-//   properties.forEach((property) => {
-//     if (property.property === currentContent) {
-//       property.property = event.value;
-//     }
-//   });
-//   localStorage.setItem("properties", JSON.stringify(property));
-// }
+
+// EDIT
+function propertyEdit(id) {
+  let property = properties.find((property) => property.id === id);
+  property.title = "new";
+  localStorage.setItem("properties", JSON.stringify(properties));
+  displayListing(properties);
+}
 
 //DELETE
-function deleteTask() {
-  const propertyIndex = properies.indexOf((property) => property.id === id);
-  properties.splice(propertyIndex, 1);
+// function propertyDelete(id) {
+//   const propertyIndex = properties.indexOf((property) => property.id === id);
+//   properties.splice(propertyIndex, 1);
+//   localStorage.setItem("properties", JSON.stringify(properties));
+//   displayListing(properties);
+// }
+
+function propertyDelete(id) {
+  properties = properties.filter((property) => {
+    return property.id != id;
+  });
   localStorage.setItem("properties", JSON.stringify(properties));
-  showListings(properties);
+
+  displayListing(properties);
 }
