@@ -22,19 +22,19 @@ function displayListing(properties) {
 
   properties.forEach((property, i) => {
     document.querySelector("#listingContent").innerHTML += `
-      <tr>
-        <td>${property.id}</td>
-        <td><input id="title${property.id}" value="${property.title}" disabled /></td>
-        <td><input id="area${property.id}" value="${property.area}" disabled /></td>
-        <td><input id="image${property.id}" value="${property.image}" disabled /><img src="${properties[i].image}" style= "width:100px;"></td>
-        <td><input id="type${property.id}" value= "${property.type}" disabled /></td>
-        <td><input id="bedrooms${property.id}" value="${property.bedrooms}" disabled /></td>
-        <td><input id="baths${property.id}" value="${property.baths}" disabled /></td>
-        <td><input id="garage${property.id}" value="${property.garage}" disabled /></td>
-        <td><input id="status${property.id}" value="${property.status}" disabled /></td>
-        <td><input id="size${property.id}" value="${property.size}"m² disabled /></td>
-        <td><input id="price${property.id}" value="${property.price}" disabled /></td>
-        <td><button type='button' onclick='propertyDelete(${property.id});'><i class="fa-solid fa-trash-can"></i></button></td>
+      <tr class="row">
+        <td class="col-lg-1 ">${property.id}</td>
+        <td class="col-lg-1 "><input id="title${property.id}" value="${property.title}" disabled /></td>
+        <td class="col-lg-1 "><input id="area${property.id}" value="${property.area}" disabled /></td>
+        <td class="col-lg-1 "><input id="image${property.id}" value="${property.image}" disabled /><img src="${properties[i].image}" style= "width:100px;"></td>
+        <td class="col-lg-1 "><input id="type${property.id}" value= "${property.type}" disabled /></td>
+        <td class="col-lg-1 "><input id="bedrooms${property.id}" value="${property.bedrooms}" disabled /></td>
+        <td class="col-lg-1 "><input id="baths${property.id}" value="${property.baths}" disabled /></td>
+        <td class="col-lg-1 "><input id="garage${property.id}" value="${property.garage}" disabled /></td>
+        <td class="col-lg-1 "><input id="status${property.id}" value="${property.status}" disabled /></td>
+        <td class="col-lg-1 "><input id="size${property.id}" value="${property.size}"m² disabled /></td>
+        <td class="col-lg-1 "><input id="price${property.id}" value="${property.price}" disabled /></td>
+        <td class="col-lg-1 "><button type='button' onclick='propertyDelete(${property.id});'><i class="fa-solid fa-trash-can"></i></button></td>
             <td><i class="fa-solid fa-pencil" id="edit${property.id}" onclick="propertyEdit(${property.id})"></i></td>
             <td><button type='button' class="btn" id="save${property.id}" onclick="propertySave(${property.id})" style="display: none">Save</button><td>
       <tr>
@@ -65,14 +65,7 @@ function addListing() {
   console.log(properties);
 }
 
-// EDIT
-// function propertyEdit(id) {
-//   let property = properties.find((property) => property.id === id);
-//   property.title = "new";
-//   localStorage.setItem("properties", JSON.stringify(properties));
-//   displayListing(properties);
-// }
-
+// UPDATE
 function propertyEdit(id) {
   document.querySelector(`#title${id}`).disabled = false;
   document.querySelector(`#area${id}`).disabled = false;
@@ -130,13 +123,7 @@ function propertySave(id) {
   localStorage.setItem("properties", JSON.stringify(properties));
   displayListing(properties);
 }
-// function edit_row(element1) {
-//   if (element1.value === "edit") {
-//     element1.value = "save";
-//   } else {
-//     element1.value = "edit";
-//   }
-// }
+
 //DELETE's the last option
 // function propertyDelete(id) {
 //   const propertyIndex = properties.indexOf((property) => property.id === id);

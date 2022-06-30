@@ -79,3 +79,7 @@ li {
   color: white;
   margin-bottom: 0;
 }
+
+.property-img {
+  object-fit: cover;
+}
