@@ -25,7 +25,7 @@ let properties = JSON.parse(localStorage.getItem("properties"))
         garage: "3",
         status: "Rent",
         size: "476",
-        price: "",
+        price: "8700",
       },
       {
         id: 3,
@@ -139,9 +139,9 @@ function showListings(properties) {
   document.querySelector("#displayListings").innerHTML = "";
   properties.forEach((property, i) => {
     document.querySelector("#displayListings").innerHTML += `
-    <div class="property-card">
+    <div class="property-card" >
       <img src=${properties[i].image} style="width: 100%; height:200px;" class="property-img" >
-      <div class="price-details">
+      <div class="price-details mt-1">
         <h3>R ${property.price}<h3>
         <p> For ${property.status}
       </div>

@@ -69,6 +69,8 @@ textarea {
 .property-card {
   position: relative;
   width: 80%;
+  border: 2px solid whitesmoke;
+  background-color: whitesmoke;
 }
 
 .price-details {

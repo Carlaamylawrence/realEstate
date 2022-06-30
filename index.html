@@ -12,12 +12,13 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <!-- LANDING PAGE -->
     <section id="landing">
-      <div class="header-container ">
+      <div class="header-container">
         <div class="heading-info d-flex flex-column justify-content-center">
           <h1 class="text-center">Welcome to Homez Connect</h1>
           <h3 class="text-center">
@@ -29,7 +30,7 @@
     </section>
     <!-- SEARCH BAR -->
     <div class="searchBar d-flex justify-content-center">
-      <div class="card ">
+      <div class="card">
         <div class="card-body row d-flex justify-content-center flex-wrap align-items-center g-3">
           <div class="col-md-2">
             <p>LOOKING FOR</p>
@@ -68,8 +69,9 @@
               </select>
             </div>
           </div>
-          <div class="col-md-2 ">
-            <input type="text" oninput="textSearch(event)" placeholder="Title" />
+          <div class="col-md-2 mb-3" >
+            <p>SEARCH BY TITLE</p>
+            <input type="text" class="form-control" oninput="textSearch(event)" placeholder="Title" />
           </div>
           <div class="col-md-2 d-flex justify-content-center">
             <a href="./admin.html"><button type="button" class="btn btn-outline-dark ">ADMIN</button></a>
@@ -83,7 +85,7 @@
         <h2>Discover Our Featured Listings</h2>
         <p>A wide variety of the perfect homes to suite your lifestyle, dreams and pocket</p>
       </div>
-      <div id="displayListings" class="gallery m-5"></div>
+      <div id="displayListings" class="gallery m-5" ></div>
     </section>
 
     <!-- FOOTER -->
@@ -138,6 +140,7 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./index.js"></script>
   </body>
 </html>
