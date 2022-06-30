@@ -120,7 +120,8 @@ let properties = JSON.parse(localStorage.getItem("properties"))
       garage:"2",
       size:"450",
       price:"3200000",
-      status:"Sale"},
+      status:"Sale",
+    },
       {
         id:10,
         title:"Spacious Studio",
@@ -132,7 +133,8 @@ let properties = JSON.parse(localStorage.getItem("properties"))
         garage:"1",
         size:"100",
         price:"6000",
-        status:"Rent"},
+        status:"Rent",
+      },
   ];
 console.log(properties);
 
