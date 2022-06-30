@@ -174,9 +174,9 @@ const sortedPrice = (e) => {
     return showListings(properties);
   }
   if (price === "ascending") {
-    showListings(sorted);
+    return showListings(sorted);
   } else {
-    showListings(sorted.reverse());
+    return showListings(sorted.reverse());
   }
 };
 
@@ -198,10 +198,10 @@ const sortedPrice = (e) => {
 //   }
 // };
 
-// const textSearch = (e) => {
-//   const text = e.target.value;
-//   const filteredproperties = properties.filter((property) =>
-//     property.title.toLowerCase().includes(text.toLowerCase())
-//   );
-//   showListings(filteredproperties);
-// };
+const textSearch = (e) => {
+  const text = e.target.value;
+  const filteredproperties = properties.filter((property) =>
+    property.title.toLowerCase().includes(text.toLowerCase())
+  );
+  showListings(filteredproperties);
+};

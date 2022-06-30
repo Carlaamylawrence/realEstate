@@ -21,8 +21,15 @@
     <div
       class="admin-add-container container-fluid m-2 d-flex justify-content-center"
     >
+      <div>
+        <a href="./index.html"
+          ><button type="button" class="btn btn-outline-dark">
+            Listings Website
+          </button></a
+        >
+      </div>
       <div class="admin-info px-5">
-        <p>
+        <p class="text-center">
           Hello Admin, Please find below the available listings. You can create
           listings as well
         </p>
@@ -31,7 +38,7 @@
         <!-- Button trigger modal -->
         <button
           type="button"
-          class="btn btn-dark"
+          class="btn btn-outline-dark"
           data-bs-toggle="modal"
           data-bs-target="#exampleModal"
         >
@@ -170,24 +177,24 @@
     </div>
     <div class="listing-conatiner m-2 d-flex flex-column">
       <div class="table-responsive{-sm|-md|-lg|-xl}">
-        <table class="table">
-          <thead>
+        <table role="table" class="table">
+          <thead role="rowgroup">
             <tr>
-              <th scope="col">id</th>
-              <th scope="col">Title</th>
-              <th scope="col">Location</th>
-              <th scope="col">Image</th>
-              <th scope="col">Type</th>
-              <th scope="col">Bedrooms</th>
-              <th scope="col">Bathrooms</th>
-              <th scope="col">Garage</th>
-              <th scope="col">Staus</th>
-              <th scope="col">Size</th>
-              <th scope="col">Price</th>
-              <th scope="col">Alter</th>
+              <th role="columnheader">id</th>
+              <th role="columnheader">Title</th>
+              <th role="columnheader">Location</th>
+              <th role="columnheader">Image</th>
+              <th role="columnheader">Type</th>
+              <th role="columnheader">Bedrooms</th>
+              <th role="columnheader">Bathrooms</th>
+              <th role="columnheader">Garage</th>
+              <th role="columnheader">Staus</th>
+              <th role="columnheader">Size</th>
+              <th role="columnheader">Price</th>
+              <th role="columnheader">Alter</th>
             </tr>
           </thead>
-          <tbody id="listingContent"></tbody>
+          <tbody role="rowgroup" id="listingContent"></tbody>
         </table>
       </div>
     </div>

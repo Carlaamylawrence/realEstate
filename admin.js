@@ -118,21 +118,21 @@ function displayListing(properties) {
   listContent.innerHTML = "";
   properties.forEach((property, i) => {
     listContent.innerHTML += `
-      <tr>
-        <td class="col-lg-1 ">${property.id}</td>
-        <td class="col-lg-1 "><input id="title${property.id}" value="${property.title}" disabled /></td>
-        <td class="col-lg-1 "><input id="area${property.id}" value="${property.area}" disabled /></td>
-        <td class="col-lg-1 "><input id="image${property.id}" value="${property.image}" disabled /><img src="${properties[i].image}" style= "width:100px;"></td>
-        <td class="col-lg-1 "><input id="type${property.id}" value= "${property.type}" disabled /></td>
-        <td class="col-lg-1 "><input id="bedrooms${property.id}" value="${property.bedrooms}" disabled /></td>
-        <td class="col-lg-1 "><input id="baths${property.id}" value="${property.baths}" disabled /></td>
-        <td class="col-lg-1 "><input id="garage${property.id}" value="${property.garage}" disabled /></td>
-        <td class="col-lg-1 "><input id="status${property.id}" value="${property.status}" disabled /></td>
-        <td class="col-lg-1 "><input id="size${property.id}" value="${property.size}"m² disabled /></td>
-        <td class="col-lg-1 "><input id="price${property.id}" value="${property.price}" disabled /></td>
-        <td><i class="fa-solid fa-trash-can" onclick='propertyDelete(${property.id});'></i></td>
-        <td><i class="fa-solid fa-pencil" id="edit${property.id}" onclick="propertyEdit(${property.id})"></i></td>
-        <td><button type='button' class="btn" id="save${property.id}" onclick="propertySave(${property.id})" style="display: none">Save</button><td>
+      <tr role="row">
+        <td class="tableData" role="cell">${property.id}</td>
+        <td class="tableData" role="cell"><input id="title${property.id}" value="${property.title}" disabled /></td>
+        <td class="tableData" role="cell"><input id="area${property.id}" value="${property.area}" disabled /></td>
+        <td class="tableData" role="cell"><input id="image${property.id}" value="${property.image}" disabled /><img src="${properties[i].image}" style= "width:100px;"></td>
+        <td class="tableData" role="cell"><input id="type${property.id}" value= "${property.type}" disabled /></td>
+        <td class="tableData" role="cell"><input id="bedrooms${property.id}" value="${property.bedrooms}" disabled /></td>
+        <td class="tableData" role="cell"><input id="baths${property.id}" value="${property.baths}" disabled /></td>
+        <td class="tableData" role="cell"><input id="garage${property.id}" value="${property.garage}" disabled /></td>
+        <td class="tableData" role="cell"><input id="status${property.id}" value="${property.status}" disabled /></td>
+        <td class="tableData" role="cell"><input id="size${property.id}" value="${property.size}"m² disabled /></td>
+        <td class="tableData" role="cell"><input id="price${property.id}" value="${property.price}" disabled /></td>
+        <td class="tableData" role="cell" ><i class="fa-solid fa-trash-can" onclick='propertyDelete(${property.id});'></i></td>
+        <td class="tableData" role="cell" ><i class="fa-solid fa-pencil" id="edit${property.id}" onclick="propertyEdit(${property.id})"></i></td>
+        <td class="tableData" role="cell" ><button type='button' class="btn" id="save${property.id}" onclick="propertySave(${property.id})" style="display: none">Save</button><td>
       <tr>
     `;
   });

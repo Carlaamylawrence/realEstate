@@ -28,7 +28,7 @@
     <!-- SEARCH BAR -->
     <div class="searchBar d-flex justify-content-center">
       <div class="card ">
-        <div class="card-body row d-flex justify-content-center align-items-center g-3">
+        <div class="card-body row d-flex justify-content-center flex-wrap align-items-center g-3">
           <div class="col-md-2">
             <p>LOOKING FOR</p>
             <div class="form mb-3" onsubmit="event.preventDefault()">
@@ -66,23 +66,11 @@
               </select>
             </div>
           </div>
-          <div class="col-md-2">
-            <p>YOUR BUDGET</p>
-            <div class="form mb-3">
-              <select class="form-select" id="Bedrooms">
-                <option selected value="all">All</option>
-                <option value="ascending">Ascending</option>
-                <option value="descending">Descending</option>
-                <option value="0-1000000">0-1000000</option>
-                <option value="1000000-2000000">1 000 000-2 000 000</option>
-                <option value="2000000-3000000">2 000 000-3 000 000</option>
-                <option value="3000000-4000000">3 000 000-4 000 000</option>
-                <option value="4000000-5000000">4 000 000-5 000 000</option>
-              </select>
-            </div>
+          <div class="col-md-2 ">
+            <input type="text" oninput="textSearch(event)" placeholder="Title" />
           </div>
           <div class="col-md-2 d-flex justify-content-center">
-            <button type="submit" class="btn btn-outline-dark ">SEARCH</button>
+            <a href="./admin.html"><button type="button" class="btn btn-outline-dark ">ADMIN</button></a>
           </div>
         </div>
       </div>
