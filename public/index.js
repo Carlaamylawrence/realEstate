@@ -19,7 +19,7 @@ function showListings(properties) {
   document.querySelector("#displayListings").innerHTML = "";
   properties.forEach((property, i) => {
     document.querySelector("#displayListings").innerHTML += `
-    <div class="property-card col-md-6 d-flex flex-column align-items-center">
+    <div class="property-card col-md-4 d-flex flex-column align-items-center">
       <img src=${properties[i].image} style="width: 350px; height:200px;" >
       <div class="price-details">
         <p>R ${property.price}</p>

@@ -90,42 +90,53 @@ function propertyEdit(id) {
 }
 
 function propertySave(id) {
-  document.querySelector(`#title${id}`).disabled = true;
-  document.querySelector(`#area${id}`).disabled = true;
-  document.querySelector(`#image${id}`).disabled = true;
-  document.querySelector(`#type${id}`).disabled = true;
-  document.querySelector(`#bedrooms${id}`).disabled = true;
-  document.querySelector(`#baths${id}`).disabled = true;
-  document.querySelector(`#garage${id}`).disabled = true;
-  document.querySelector(`#status${id}`).disabled = true;
-  document.querySelector(`#size${id}`).disabled = true;
-  document.querySelector(`#price${id}`).disabled = true;
-
-  properties.forEach((property, i) => {
-    document.querySelector("#listingContent").innerHTML += `
-      <tr>
-        <td>${property.id}</td>
-        <td><input id="title${property.id}" value=${property.title} disabled /></td>
-        <td><input id="area${property.id}" value=${property.area} disabled /></td>
-        <td><input id="image${property.id}" value=${property.image} disabled /></td>
-        <td><input id="type${property.id}" value= ${property.type} disabled /></td>
-        <td><input id="bedrooms${property.id}" value=${property.bedrooms} disabled /></td>
-        <td><input id="baths${property.id}" value=${property.baths} disabled /></td>
-        <td><input id="garage${property.id}" value=${property.garage} disabled /></td>
-        <td><input id="status${property.id}" value=${property.status} disabled /></td>
-        <td><input id="size${property.id}" value=${property.size}m² disabled /></td>
-        <td><input id="price${property.id}" value=${property.price} disabled /></td>
-        <td><button type='button' onclick='propertyDelete(${property.id});'><i class="fa-solid fa-trash-can"></i></button></td>
-            <td><i class="fa-solid fa-pencil" id="edit${property.id}" onclick="propertyEdit(${property.id})"></i></td>
-            <td><button type='button' class="btn" id="save${property.id}" onclick="propertySave(${property.id})" style="display: none">Save</button><td>
-      <tr>
-    `;
+  const property = properties.find((property) => {
+    return property.id === id;
   });
-  properties.push(property);
+
+  const titleBox = document.querySelector(`#title${id}`);
+  const areaBox = document.querySelector(`#area${id}`);
+  const imageBox = document.querySelector(`#image${id}`);
+  const typeBox = document.querySelector(`#type${id}`);
+  const bedroomsBox = document.querySelector(`#bedrooms${id}`);
+  const bathsBox = document.querySelector(`#baths${id}`);
+  const garageBox = document.querySelector(`#garage${id}`);
+  const statusBox = document.querySelector(`#status${id}`);
+  const sizeBox = document.querySelector(`#size${id}`);
+  const priceBox = document.querySelector(`#price${id}`);
+
+  titleBox.disabled = true;
+  areaBox.disabled = true;
+  imageBox.disabled = true;
+  typeBox.disabled = true;
+  bedroomsBox.disabled = true;
+  bathsBox.disabled = true;
+  garageBox.disabled = true;
+  statusBox.disabled = true;
+  sizeBox.disabled = true;
+  priceBox.disabled = true;
+
+  property.title = titleBox.value;
+  property.area = areaBox.value;
+  property.image = imageBox.value;
+  property.type = typeBox.value;
+  property.bedrooms = bedroomsBox.value;
+  property.baths = bathsBox.value;
+  property.garage = garageBox.value;
+  property.status = statusBox.value;
+  property.size = sizeBox.value;
+  property.price = priceBox.value;
+
   localStorage.setItem("properties", JSON.stringify(properties));
   displayListing(properties);
 }
-
+// function edit_row(element1) {
+//   if (element1.value === "edit") {
+//     element1.value = "save";
+//   } else {
+//     element1.value = "edit";
+//   }
+// }
 //DELETE's the last option
 // function propertyDelete(id) {
 //   const propertyIndex = properties.indexOf((property) => property.id === id);
@@ -143,3 +154,24 @@ function propertyDelete(id) {
 
   displayListing(properties);
 }
+
+//  properties.forEach((property, i) => {
+//    document.querySelector("#listingContent").innerHTML += `
+//       <tr>
+//         <td>${property.id}</td>
+//         <td><input id="title${property.id}" value=${property.title} /></td>
+//         <td><input id="area${property.id}" value=${property.area} /></td>
+//         <td><input id="image${property.id}" value=${property.image}  /></td>
+//         <td><input id="type${property.id}" value= ${property.type} /></td>
+//         <td><input id="bedrooms${property.id}" value=${property.bedrooms} /></td>
+//         <td><input id="baths${property.id}" value=${property.baths}  /></td>
+//         <td><input id="garage${property.id}" value=${property.garage}  /></td>
+//         <td><input id="status${property.id}" value=${property.status}  /></td>
+//         <td><input id="size${property.id}" value=${property.size}m²  /></td>
+//         <td><input id="price${property.id}" value=${property.price}  /></td>
+//         <td><button type='button' onclick='propertyDelete(${property.id});'><i class="fa-solid fa-trash-can"></i></button></td>
+//             <td><i class="fa-solid fa-pencil" id="edit${property.id}" onclick="propertyEdit(${property.id})"></i></td>
+//             <td><button type='button' class="btn" id="save${property.id}" onclick="propertySave(${property.id})" style="display: none">Save</button><td>
+//       <tr>
+//     `;
+//  });
