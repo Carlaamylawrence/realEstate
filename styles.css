@@ -40,6 +40,7 @@ body {
 
 .property-card {
   position: relative;
+  width: 80%;
 }
 
 .price-details {
@@ -55,9 +56,7 @@ body {
   right: 0;
   bottom: 0;
   padding: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
+
   opacity: 0;
   transition: all 0.3s linear;
 }
@@ -82,4 +81,9 @@ li {
 
 .property-img {
   object-fit: cover;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5%;
 }
