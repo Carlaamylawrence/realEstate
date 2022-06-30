@@ -18,11 +18,12 @@ let properties = JSON.parse(localStorage.getItem("properties"))
 console.log(properties);
 
 function displayListing(properties) {
-  document.querySelector("#listingContent").innerHTML = "";
+  let listContent = document.querySelector("#listingContent");
 
+  listContent.innerHTML = "";
   properties.forEach((property, i) => {
-    document.querySelector("#listingContent").innerHTML += `
-      <tr class="row">
+    listContent.innerHTML += `
+      <tr>
         <td class="col-lg-1 ">${property.id}</td>
         <td class="col-lg-1 "><input id="title${property.id}" value="${property.title}" disabled /></td>
         <td class="col-lg-1 "><input id="area${property.id}" value="${property.area}" disabled /></td>
@@ -35,8 +36,8 @@ function displayListing(properties) {
         <td class="col-lg-1 "><input id="size${property.id}" value="${property.size}"m² disabled /></td>
         <td class="col-lg-1 "><input id="price${property.id}" value="${property.price}" disabled /></td>
         <td class="col-lg-1 "><button type='button' onclick='propertyDelete(${property.id});'><i class="fa-solid fa-trash-can"></i></button></td>
-            <td><i class="fa-solid fa-pencil" id="edit${property.id}" onclick="propertyEdit(${property.id})"></i></td>
-            <td><button type='button' class="btn" id="save${property.id}" onclick="propertySave(${property.id})" style="display: none">Save</button><td>
+        <td><i class="fa-solid fa-pencil" id="edit${property.id}" onclick="propertyEdit(${property.id})"></i></td>
+        <td><button type='button' class="btn" id="save${property.id}" onclick="propertySave(${property.id})" style="display: none">Save</button><td>
       <tr>
     `;
   });
