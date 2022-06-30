@@ -142,10 +142,12 @@ function showListings(properties) {
     <div class="property-card">
       <img src=${properties[i].image} style="width: 100%; height:200px;" class="property-img" >
       <div class="price-details">
-        <p>R ${property.price}</p>
+        <h3>R ${property.price}<h3>
         <p> For ${property.status}
       </div>
-      <h4> ${property.title} </h4>
+      <div class="property-title">
+        <h4> ${property.title} </h4>
+      </div>
       <div class="property-info">
         <li><i class="fa-solid fa-bed"></i> ${property.bedrooms}</li>
         <li><i class="fa-solid fa-shower"></i> ${property.baths}</li>
