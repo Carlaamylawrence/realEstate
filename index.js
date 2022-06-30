@@ -167,18 +167,18 @@ function filteredBedrooms(e) {
   return showListings(filtered);
 }
 
-const sortedPrice = (e) => {
-  const price = e.target.value;
-  const sorted = properties.sort((a, b) => a.price - b.price);
-  if (price === "all") {
-    return showListings(properties);
-  }
-  if (price === "ascending") {
-    return showListings(sorted);
-  } else {
-    return showListings(sorted.reverse());
-  }
-};
+// const sortedPrice = (e) => {
+//   const price = e.target.value;
+//   const sorted = properties.sort((a, b) => a.price - b.price);
+//   if (price === "all") {
+//     return showListings(properties);
+//   }
+//   if (price === "ascending") {
+//     return showListings(sorted);
+//   } else {
+//     return showListings(sorted.reverse());
+//   }
+// };
 
 // const sortedName = (e) => {
 //   const direction = e.target.value;

@@ -9,10 +9,16 @@ body {
 }
 
 #landing {
-  background-image: url(./assets/pexels-the-lazy-artist-gallery-1642125.jpg);
+  background: linear-gradient(
+      0deg,
+      rgba(54, 54, 54, 0.167),
+      rgba(20, 20, 20, 0.3)
+    ),
+    url(./assets/pexels-the-lazy-artist-gallery-1642125.jpg);
+  /* background-image: url(./assets/pexels-the-lazy-artist-gallery-1642125.jpg); */
   background-position: center;
   background-size: cover;
-  min-height: 100vh;
+  min-height: 60vh;
 }
 
 .header-container {
@@ -20,6 +26,21 @@ body {
   text-shadow: 2px 1px 1px black;
 }
 
+.heading-info {
+  padding-top: 12%;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  width: 7rem;
+}
 .card {
   margin-top: -3rem;
   width: 70%;
