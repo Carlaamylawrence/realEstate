@@ -45,10 +45,17 @@ textarea {
   margin-top: -3rem;
   width: 70%;
 }
-
+body{
+  position: relative;
+  min-height: 100%;
+}
+footer{
+  position:sticky;
+}
 #footer-top {
   background-color: #004274;
   color: white;
+  margin-top: 20%;
 }
 
 #listings {
