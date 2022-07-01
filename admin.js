@@ -264,3 +264,43 @@ function propertyDelete(id) {
 
   displayListing(properties);
 }
+
+function filteredType(e) {
+  const type = e.target.value;
+  if (type === "all") {
+    return displayListing(properties);
+  }
+  const filtered = properties.filter((property) => property.type === type);
+
+  return displayListing(filtered);
+}
+
+function filteredLocation(e) {
+  const location = e.target.value;
+  if (location === "all") {
+    return displayListing(properties);
+  }
+  const filtered = properties.filter((property) => property.area === location);
+
+  return displayListing(filtered);
+}
+
+function filteredBedrooms(e) {
+  const bedrooms = e.target.value;
+  if (bedrooms === "all") {
+    return displayListing(properties);
+  }
+  const filtered = properties.filter(
+    (property) => property.bedrooms === bedrooms
+  );
+
+  return displayListing(filtered);
+}
+
+const textSearch = (e) => {
+  const text = e.target.value;
+  const filteredproperties = properties.filter((property) =>
+    property.title.toLowerCase().includes(text.toLowerCase())
+  );
+  displayListing(filteredproperties);
+};

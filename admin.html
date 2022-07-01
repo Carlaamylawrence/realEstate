@@ -19,7 +19,7 @@
   </head>
   <body>
     <div
-      class="admin-add-container container-fluid m-2 d-flex justify-content-center"
+      class="admin-add-container container-fluid m-2 d-flex justify-content-center mb-2"
     >
       <div>
         <a href="./index.html"
@@ -175,6 +175,59 @@
         </div>
       </div>
     </div>
+
+    <div class="searchBar d-flex justify-content-center">
+      <div class="card mt-2" >
+        <div class="card-body row d-flex justify-content-center flex-wrap align-items-center g-4">
+          <div class="col-md-2">
+            <p>LOOKING FOR</p>
+            <div class="form mb-3 d-flex flex-column align-items-center" onsubmit="event.preventDefault()">
+              <select class="form-select" id="Type" onchange="filteredType(event);">
+                <option selected value="all">All</option>
+                <option value="Apartment">Apartment</option>
+                <option value="Family Home">Family Home</option>
+                <option value="Studio">Studio</option>
+              </select>
+              
+            </div>
+          </div>
+          <div class="col-md-2  ">
+            <p>LOCATION</p>
+            <div class="form mb-3">
+              <select class="form-select" id="Location"  onchange="filteredLocation(event);">
+                <option selected value="all">All locations</option>
+                <option value="Cape Town">Cape Town</option>
+                <option value="Atlantic Seaboard">Atlantic Seaboard</option>
+                <option value="Northen Suburbs">Northen Suburbs</option>
+                <option value="Southern Suburbs">Southern Suburbs</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-2 ">
+            <p>PROPERTY SIZE</p>
+            <div class="form mb-5">
+              <select class="form-select" id="Bedrooms" onchange="filteredBedrooms(event);">
+                <option selected value="all">Bedrooms</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-2 mb-5 "  >
+            <p>SEARCH BY TITLE</p>
+            <input type="text" class="form-control" oninput="textSearch(event)" placeholder="Title" />
+          </div>
+          <!-- <div class="col-md-2 d-flex justify-content-center">
+            <a href="./admin.html"><button type="button" class="btn btn-outline-dark ">ADMIN</button></a>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+
     <div class="listing-conatiner m-2 d-flex flex-column">
       <div class="table-responsive{-sm|-md|-lg|-xl}">
         <table role="table" class="table">
